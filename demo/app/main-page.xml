@@ -1,0 +1,13 @@
+<Page 
+		xmlns="http://schemas.nativescript.org/tns.xsd" 
+		xmlns:ib="~/nativescript-image-button"
+		loaded="loaded">
+  <StackLayout>
+    <Label text="NativeScript Image Button" class="title"/>
+    
+    <ib:ImageButton src="~/res/icon.png" class="myButton"/>
+
+      
+    
+  </StackLayout>
+</Page>
