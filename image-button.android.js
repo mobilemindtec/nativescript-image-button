@@ -16,18 +16,13 @@ var ImageButton = (function (_super) {
 
       _super.prototype.initNativeView.call(this)
 
+      this.setAnimation(this.clickable)
+
+
+
       var self = this
       this.addEventListener("tap", function (eventData) {
                 
-        if(self.clickable){
-          var attrs = [android.R.attr.selectableItemBackgroundBorderless]
-          var typedArray = application.android.context.obtainStyledAttributes(attrs)
-          var backgroundResource = typedArray.getResourceId(0, 0);
-          self.nativeView.setBackgroundResource(backgroundResource);
-          self.nativeView.setClickable(true)
-
-        }
-
         if(self.waitAfterClick > 0){
 
           self.isUserInteractionEnabled = false
@@ -40,6 +35,21 @@ var ImageButton = (function (_super) {
       }, this);
 
     }   
+
+    ImageButton.prototype._onClickablePropertyChanged = function(newValue, oldValue){        
+      this.setAnimation(newValue)
+    }
+
+    ImageButton.prototype.setAnimation = function(clickable) {
+       if(clickable){
+        var attrs = [android.R.attr.selectableItemBackgroundBorderless]
+        var typedArray = application.android.context.obtainStyledAttributes(attrs)
+        var backgroundResource = typedArray.getResourceId(0, 0);
+        this.nativeView.setBackgroundResource(backgroundResource);
+        this.nativeView.setClickable(true)
+      }
+    };
+
 
     return ImageButton;
 

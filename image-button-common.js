@@ -36,7 +36,7 @@
 
 	exports.waitAfterClickProperty = new view.Property({ 
 		name: "waitAfterClick", 
-		defaultValue: 2000,
+		defaultValue: 1000,
 		valueConverter: function(value) { 
 			if(typeof value == 'string')
 				value = parseInt(value)
