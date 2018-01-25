@@ -42,11 +42,14 @@ var ImageButton = (function (_super) {
 
     ImageButton.prototype.setAnimation = function(clickable) {
        if(clickable){
-        var attrs = [android.R.attr.selectableItemBackgroundBorderless]
-        var typedArray = application.android.context.obtainStyledAttributes(attrs)
-        var backgroundResource = typedArray.getResourceId(0, 0);
-        this.nativeView.setBackgroundResource(backgroundResource);
-        this.nativeView.setClickable(true)
+
+        if(android.R.attr.selectableItemBackgroundBorderless){
+          var attrs = [android.R.attr.selectableItemBackgroundBorderless]
+          var typedArray = application.android.context.obtainStyledAttributes(attrs)
+          var backgroundResource = typedArray.getResourceId(0, 0);
+          this.nativeView.setBackgroundResource(backgroundResource);
+          this.nativeView.setClickable(true)
+        }
       }
     };
 
