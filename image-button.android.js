@@ -1,8 +1,8 @@
-var common = require("./image-button-common")
-var imageModule = require("ui/image")
-var application = require("application")
+import * from "./image-button-common"
+import {* as imageModule}  from "@nativescript/core/ui/image"
+import {* as application} from "@nativescript/core/application"
 
-require("utils/module-merge").merge(common, exports)
+export * from "./image-button-common"
 
 
 var ImageButton = (function (_super) {

@@ -1,5 +1,5 @@
-	var imageModule = require("ui/image");
-	var view = require("ui/core/view");
+	var imageModule = require("@nativescript/core/ui/image");
+	var view = require("@nativescript/core/ui/core/view");
 
 	var ImageButton = (function (_super) {
 	    __extends(ImageButton, _super);
