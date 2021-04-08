@@ -1,1 +1,1 @@
-require("utils/module-merge").merge(require("./image-button"), exports)
+export * from "./image-button"

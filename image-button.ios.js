@@ -1,9 +1,9 @@
-import * from "./image-button-common"
-import {* as imageModule}  from "@nativescript/core/ui/image"
-import {* as application} from "@nativescript/core/application"
+var common = require("./image-button-common")
+var imageModule = require("@nativescript/core/ui/image")
+var application = require("@nativescript/core/application")
 
-export * from "./image-button-common"
 
+Object.assign(module.exports, require("./image-button-common"))
 
 var MyAnimationDelegate = (function(_super){
 
